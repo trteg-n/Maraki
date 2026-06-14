@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --color-ink: #251713;
+  --color-muted: #7b625a;
+  --color-rose: #b66a62;
+  --color-clay: #8a4b42;
+  --color-vanilla: #fffaf4;
+  --color-cream: #f8efe6;
+  --color-mist: #edf3ef;
+}
+
+@theme {
+  --font-sans: var(--font-dm-sans), system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --color-ink: var(--color-ink);
+  --color-muted: var(--color-muted);
+  --color-rose: var(--color-rose);
+  --color-clay: var(--color-clay);
+  --color-vanilla: var(--color-vanilla);
+  --color-cream: var(--color-cream);
+  --color-mist: var(--color-mist);
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; background: var(--color-vanilla); }
+  body {
+    margin: 0;
+    color: var(--color-ink);
+    background:
+      radial-gradient(circle at top left, rgba(182, 106, 98, 0.14), transparent 28rem),
+      linear-gradient(180deg, #fffaf4 0%, #f8efe6 48%, #fffaf4 100%);
+    min-height: 100vh;
+  }
+  a { color: inherit; text-decoration: none; }
+  button, input, select, textarea { font: inherit; }
+}
+
+@layer components {
+  .container-luxe { width: min(100% - 2rem, 1180px); margin-inline: auto; }
+  .font-display { font-family: var(--font-fraunces), Georgia, serif; }
+  .spring-hover { transition: transform 450ms cubic-bezier(.2,.8,.2,1), box-shadow 450ms ease, opacity 300ms ease; }
+  .spring-hover:hover { transform: translateY(-4px); }
+  .img-zoom { transition: transform 700ms cubic-bezier(.2,.8,.2,1); }
+  .group:hover .img-zoom { transform: scale(1.045); }
+  .scrim-bottom { background: linear-gradient(180deg, transparent 0%, rgba(37, 23, 19, 0.76) 100%); }
+  .glass-panel { background: rgba(255, 250, 244, 0.74); backdrop-filter: blur(18px); border: 1px solid rgba(138, 75, 66, 0.12); }
+}
+
+@layer utilities {
+  .animate-on-scroll { opacity: 0; transform: translateY(24px); }
+  .animate-fade-up { animation: fade-up 800ms cubic-bezier(.2,.8,.2,1) both; }
+  .animate-fade-in { animation: fade-in 700ms ease both; }
+  .animate-scale-in { animation: scale-in 700ms cubic-bezier(.2,.8,.2,1) both; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(.96); }
+  to { opacity: 1; transform: scale(1); }
+}

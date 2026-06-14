@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Maraki Ladies Salon">
+  <rect width="512" height="512" rx="128" fill="#fffaf4"/>
+  <circle cx="256" cy="256" r="178" fill="#f2d7cf"/>
+  <circle cx="256" cy="256" r="136" fill="#8a4b42"/>
+  <path d="M162 337V174h38l56 92 56-92h38v163h-38v-94l-43 69h-26l-43-69v94h-38Z" fill="#fffaf4"/>
+  <path d="M164 365c61 32 123 32 184 0" fill="none" stroke="#b66a62" stroke-width="18" stroke-linecap="round"/>
+</svg>
